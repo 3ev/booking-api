@@ -1,0 +1,46 @@
+{
+    "name": "3ev/booking-api",
+
+    "description": "API client for the Booking API",
+
+    "keywords": [],
+
+    "homepage": "https://github.com/3ev/booking-api",
+
+    "type": "library",
+
+    "authors": [
+        {
+            "name": "3ev",
+            "email": "info@3ev.com",
+            "homepage": "http://www.3ev.com/"
+        }
+    ],
+
+    "license": "MIT",
+
+    "require": {
+        "php": ">=5.3.0",
+        "kriswallsmith/buzz": "~0.10"
+    },
+
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Tev": "src/"
+        }
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    }
+}
