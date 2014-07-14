@@ -14,7 +14,7 @@ abstract class AbstractEndpoint implements EndpointInterface {
      *
      * @var string
      */
-    private $method;
+    protected $method;
 
     /**
      * Request params.
