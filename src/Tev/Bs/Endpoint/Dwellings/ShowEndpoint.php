@@ -38,6 +38,6 @@ class ShowEndpoint extends AbstractEndpoint {
      */
     protected function apiUrl()
     {
-        return "/api/bookings/{$this->dwellingId}";
+        return "/api/dwellings/{$this->dwellingId}";
     }
 }
