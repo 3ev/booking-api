@@ -31,7 +31,7 @@ class ErrorResponseException extends Exception {
      */
     public function setResponse(ResponseInterface $response)
     {
-        $this->response;
+        $this->response = $response;
         return $this;
     }
 
