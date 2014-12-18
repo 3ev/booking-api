@@ -53,7 +53,7 @@ class Parser {
     {
         $content = json_decode($this->response->getContent());
 
-        if (!$content) {
+        if ($content === null) {
             throw new Exception('Failed to get response from server');
         }
 
