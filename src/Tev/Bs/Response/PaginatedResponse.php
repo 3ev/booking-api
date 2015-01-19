@@ -75,7 +75,9 @@ class PaginatedResponse implements ResponseInterface {
      */
     public function totalPages()
     {
-        return (int) $this->parsed->last_page;
+        $last = (int) $this->parsed->last_page;
+
+        return $last === 0 ? 1 : $last;
     }
 
     /**
