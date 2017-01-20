@@ -1,5 +1,7 @@
 <?php namespace Tev\Bs;
 
+use Exception;
+
 use Buzz\Client\Curl,
     Buzz\Message\RequestInterface,
     Buzz\Message\Request,
@@ -117,6 +119,14 @@ class Client {
         $client->send($request, $response);
 
         // Parse
+        $responseContent = json_decode($response->getContent(), true);
+        if ($responseContent['error']) {
+            $errorString = "\033[31m ERROR GETTING RESPONSE USING " . get_class($endpoint) . ": \n";
+            foreach($responseContent['data'] as $error) {
+                $errorString  = $errorString . "----- " . $error[0] . "\n";
+            }
+            throw new Exception($errorString . "\033[0m");
+        }
 
         $parser = new Parser($response, $endpoint);
 
