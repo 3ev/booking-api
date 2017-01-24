@@ -120,12 +120,12 @@ class Client {
 
         // Parse
         $responseContent = json_decode($response->getContent(), true);
-        if ($responseContent['error']) {
-            $errorString = "\033[31m ERROR GETTING RESPONSE USING " . get_class($endpoint) . ": \n";
+        if ($responseContent['error'] && get_class($endpoint) === "Tev\Bs\Endpoint\Customers\UpdateEndpoint") {
+            $errorString = "\033[31mERROR GETTING RESPONSE USING " . get_class($endpoint) . ": \n";
             foreach($responseContent['data'] as $error) {
                 $errorString  = $errorString . "----- " . $error[0] . "\n";
             }
-            throw new Exception($errorString . "\033[0m");
+            echo $errorString . "\033[0m";
         }
 
         $parser = new Parser($response, $endpoint);
