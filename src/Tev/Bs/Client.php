@@ -115,6 +115,7 @@ class Client {
         // Send
 
         $client = new Curl();
+        $client->setOption(CURLOPT_SSL_VERIFYPEER, false);
         $client->setTimeout(30);
         $client->send($request, $response);
 
