@@ -3,14 +3,12 @@
 use Tev\Bs\Endpoint\AbstractEndpoint;
 
 /**
- * Endpoint object for /api/pricing/full/:id.
- *
- * See: /docs/endpoints#pricing-show-full
+ * Endpoint object for /api/pricing/pricerows/:id.
  */
 class ShowPriceRowsEndpoint extends AbstractEndpoint {
 
     /**
-     * ID of Dwelling to show pricing
+     * ID of Dwelling to retrieve price rows.
      *
      * @var string
      */
@@ -21,7 +19,7 @@ class ShowPriceRowsEndpoint extends AbstractEndpoint {
      *
      * Set Dwelling ID.
      *
-     * @param  string $dwellingId ID of Dwelling to show
+     * @param  string $dwellingId ID of Dwelling to get price rows.
      * @return void
      */
     public function __construct($dwellingId)
