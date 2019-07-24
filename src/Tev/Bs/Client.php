@@ -87,12 +87,14 @@ class Client {
      * Make an API request.
      *
      * @param  \Tev\Bs\Contracts\EndpointInterface $endpoint Requesting endpoint
+     * @param  int $timeout
+     *
      * @return \Tev\Bs\Contracts\ResponseInterface           Response
      *
      * @throws \Exception
      * @throws \Tev\Bs\Exception\ErrorResponseException
      */
-    public function request(EndpointInterface $endpoint)
+    public function request(EndpointInterface $endpoint, $timeout = 30)
     {
         if ($this->customerId !== null) {
             $endpoint->setParam('customer_id', $this->customerId);
@@ -116,7 +118,7 @@ class Client {
 
         $client = new Curl();
         $client->setOption(CURLOPT_SSL_VERIFYPEER, false);
-        $client->setTimeout(30);
+        $client->setTimeout($timeout);
         $client->send($request, $response);
 
         // Parse
