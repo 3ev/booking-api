@@ -27,7 +27,7 @@ class UpdateEndpoint extends AbstractEndpoint {
     {
         parent::__construct();
 
-        $this->method = RequestInterface::METHOD_PUT;
+        $this->method = RequestInterface::METHOD_POST;
 
         $this->reviewId = $reviewId;
     }
