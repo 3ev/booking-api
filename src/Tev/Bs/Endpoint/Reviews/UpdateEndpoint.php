@@ -39,6 +39,6 @@ class UpdateEndpoint extends AbstractEndpoint {
      */
     protected function apiUrl()
     {
-        return "/api/reviews/{$this->reviewId}";
+        return "/api/reviews/update/{$this->reviewId}";
     }
 }

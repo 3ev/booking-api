@@ -27,6 +27,6 @@ class CreateEndpoint extends AbstractEndpoint {
      */
     protected function apiUrl()
     {
-        return '/api/reviews';
+        return '/api/reviews/create';
     }
 }
