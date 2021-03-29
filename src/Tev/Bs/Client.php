@@ -94,8 +94,8 @@ class Client {
      * @throws \Exception
      * @throws \Tev\Bs\Exception\ErrorResponseException
      */
-    public function request(EndpointInterface $endpoint, $timeout = 30)
-    {
+   public function request(EndpointInterface $endpoint, $timeout = 60)
+   {
         if ($this->customerId !== null) {
             $endpoint->setParam('customer_id', $this->customerId);
         }
